@@ -10,8 +10,8 @@
     <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.user.email %></td>
-        <td><%= listing.start %></td>
-        <td><%= listing.end %></td>
+        <td><%= listing.start.strftime("%d/%m/%y: %H:%M:%S %Z")  %></td>
+        <td><%= listing.end.strftime("%d/%m/%y: %H:%M:%S %Z")  %></td>
         <td><%= listing.price %></td>
         <td><%= listing.details %></td>
         <td><%= link_to 'Show', listing %></td>

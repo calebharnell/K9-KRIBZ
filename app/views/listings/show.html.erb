@@ -7,12 +7,12 @@
 
 <p>
   <strong>Start:</strong>
-  <%= @listing.start %>
+  <%= @listing.start.strftime("%d/%m/%y: %H:%M:%S %Z") %>
 </p>
 
 <p>
   <strong>End:</strong>
-  <%= @listing.end %>
+  <%= @listing.end.strftime("%d/%m/%y: %H:%M:%S %Z") %>
 </p>
 
 <p>
