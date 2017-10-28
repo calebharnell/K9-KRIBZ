@@ -2,12 +2,23 @@
 
 <h1>User Profile</h1>
 
-<%= @user.email %>
+<%= @user.email %><br>
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.suburb %>
-<%= @user.state %>
+<%= @user.first_name %><br>
+<%= @user.last_name %><br>
+<%= @user.suburb %><br>
+<%= @user.state %><br>
+
+<% @user.dogs.each do |dog| %>
+<%= dog.name %><br>
+<%= dog.age %><br>
+<%= dog.breed %><br>
+<%= link_to 'Show', dog %>
+<%= link_to 'Edit', edit_dog_path(dog) %>
+<%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%= link_to 'New Dog', new_dog_path %>
 
 
 <%= link_to 'Back', users_path %>
