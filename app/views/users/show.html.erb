@@ -1,13 +1,73 @@
 <div class="container">
 
 <h1>User Profile</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @user.first_name %></h3>
+  </div>
+  <div class="panel-body">
 
-<%= @user.email %>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= @user.last_name %><br>
+        <%= @user.email %><br>
+        <%= @user.suburb %><br>
+        <%= @user.state %><br>
+      </div>
+      <div class="col-sm-6">
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.suburb %>
-<%= @user.state %>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @user.suburb %>, <%= @user.state %></h3>
+          </div>
+          <div class="panel-body">
+            <iframe
+              width="500"
+              height="450"
+              frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCbKIzRjmvpmZdRArNyNInwazeiod25iq8
+                &q=<%= @user.suburb %><%= @user.state %>" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @user.dogs.each do |dog| %>
+        <div class="col-sm-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= dog.name %></h3>
+            </div>
+            <div class="panel-body">
+              Breed: <%= dog.breed %><br>
+              Age: <%= dog.age %><br>
+              <% if dog.user == current_user %>
+                <%= link_to 'Show', dog, class: 'btn btn-primary' %>
+                <%= link_to 'Edit', edit_dog_path(dog), class: 'btn btn-warning' %>
+                <%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%= link_to 'Back', users_path %>
