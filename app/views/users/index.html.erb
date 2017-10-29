@@ -9,8 +9,7 @@
       <tr>
         <td><%= user.first_name %> <%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%= user.suburb %></td>
-        <td><%= user.state %></td>
+        <td><%= user.suburb %>, <%= user.state %></td>
         <td><%= link_to 'Show Profile', user %></td>
       </tr>
     <% end %>

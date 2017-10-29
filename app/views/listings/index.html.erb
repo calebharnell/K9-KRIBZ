@@ -3,18 +3,21 @@
 
 <h1>Listings</h1>
 
-<%= link_to 'Create New Listing', new_listing_path, class: "btn btn-info" %><br><br>
+<%= link_to 'My profile', current_user, class: "btn btn-success" %>
+<%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
 
 <% @listings.each do |listing| %>
 
-  <div class="panel panel-primary">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title"><%= listing.user.first_name %></h3>
     </div>
     <div class="row panel-body">
       <div class="col-sm-3">
-        Start: <%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %><br>
-        End: <%= listing.end.strftime("%A, %d %b %Y %l:%M %p" )  %>
+        Start:<br>
+        <%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %><br>
+        End:<br>
+        <%= listing.end.strftime("%A, %d %b %Y %l:%M %p" )  %>
       </div>
       <div class="col-sm-3">
         $<%= listing.price %>
@@ -24,7 +27,7 @@
         <%= listing.user.state %>
       </div>
       <div class="col-sm-3">
-        <%= link_to 'Show', listing, class:"btn btn-success" %>
+        <%= link_to 'Show', listing, class:"btn btn-primary" %>
         <% if listing.user == current_user %>
         <%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-warning" %>
         <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
