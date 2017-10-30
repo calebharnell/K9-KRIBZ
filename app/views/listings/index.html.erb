@@ -9,9 +9,19 @@
 
   <div class="panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title"><%= listing.user.first_name %></h3>
+      <h3 class="panel-title"><%= link_to 'View Listing Details', listing, class:"btn btn-info" %>
+        <% if listing.user == current_user %>
+        <%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-warning" %>
+        <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+        <% end %>
+
+
+      </h3>
     </div>
     <div class="row panel-body">
+      <div class="col-sm-3">
+          <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
+      </div>
       <div class="col-sm-3">
         Start:<br>
         <%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %><br>
@@ -22,15 +32,8 @@
         $<%= listing.price %>
       </div>
       <div class="col-sm-3">
-        <%= listing.user.suburb %>,<br>
-        <%= listing.user.state %>
-      </div>
-      <div class="col-sm-3">
-        <%= link_to 'Show', listing, class:"btn btn-primary" %>
-        <% if listing.user == current_user %>
-        <%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-warning" %>
-        <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
-        <% end %>
+        <%= listing.user.first_name %><br>
+        <%= listing.user.suburb %>, <%= listing.user.state %><br>
       </div>
     </div>
   </div>
