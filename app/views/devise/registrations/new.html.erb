@@ -23,11 +23,15 @@
     <%= f.select :state, ["QLD", "NSW", "VIC", "SA", "WA", "TAS", "ACT", "NT"]%>
   </div>
 
+  <div class="field av-upload">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
-
 
   <div class="field">
     <%= f.label :password %>
