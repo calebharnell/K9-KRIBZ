@@ -2,46 +2,106 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-<div class="alert alert-dismissible alert-warning">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <h4>Warning!</h4>
-  <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+<%= link_to 'Back', listings_path, class: "btn btn-primary" %>
+<% if @listing.user == current_user %>
+<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-warning" %>
+<% end %><br><br>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Listing Details</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-primary grid">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @listing.user.first_name %></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              <strong>Start:</strong>
+              <%= @listing.start.strftime("%A, %d %b %Y %l:%M %p") %>
+            </p>
+            <p>
+              <strong>End:</strong>
+              <%= @listing.end.strftime("%A, %d %b %Y %l:%M %p") %>
+            </p>
+            <p>
+              <strong>Price:</strong>
+              $<%= @listing.price %>
+            </p>
+            <p>
+              <strong>Details:</strong>
+              <%= @listing.details %>
+            </p>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="badge">14</span>
+                Listing views:
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Location</h3>
+          </div>
+          <div class="panel-body">
+            <iframe
+              width="500"
+              height="450"
+              frameborder="0" style="border:0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCbKIzRjmvpmZdRArNyNInwazeiod25iq8
+                &q=<%= @listing.user.suburb %><%= @listing.user.state %>" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Panel primary</h3>
+          </div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Panel primary</h3>
+          </div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+  </div>
 </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @listing.user.first_name %>
-</p>
 
-<p>
-  <strong>Start:</strong>
-  <%= @listing.start.strftime("%d/%m/%y: %H:%M:%S %Z") %>
-</p>
 
-<p>
-  <strong>End:</strong>
-  <%= @listing.end.strftime("%d/%m/%y: %H:%M:%S %Z") %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
 
-<p>
-  <strong>Details:</strong>
-  <%= @listing.details %>
-</p>
 
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Listing views:
-  </li>
-</ul>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+
+
+
 
 </div>

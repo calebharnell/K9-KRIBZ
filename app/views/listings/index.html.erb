@@ -22,18 +22,23 @@
       <div class="col-sm-3">
           <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3"><br>
         Start:<br>
-        <%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %><br>
+        <strong><%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %></strong><br><br>
         End:<br>
-        <%= listing.end.strftime("%A, %d %b %Y %l:%M %p" )  %>
+        <strong><%= listing.end.strftime("%A, %d %b %Y %l:%M %p" ) %></strong>
       </div>
-      <div class="col-sm-3">
-        $<%= listing.price %>
+      <div class="col-sm-3"><br>
+        Number of dogs: <br>
+        <strong><%= listing.user.dogs.count %></strong><br><br>
+        Pay offered: <br>
+        <strong>$<%= listing.price %></strong>
       </div>
-      <div class="col-sm-3">
-        <%= listing.user.first_name %><br>
-        <%= listing.user.suburb %>, <%= listing.user.state %><br>
+      <div class="col-sm-3"><br>
+          Listed by: <br>
+          <strong><%= listing.user.first_name %> <%= listing.user.last_name %></strong><br><br>
+          Location: <br>
+          <strong><%= listing.user.suburb %>, <%= listing.user.state %></strong><br>
       </div>
     </div>
   </div>
