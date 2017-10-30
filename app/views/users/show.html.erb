@@ -3,15 +3,25 @@
 <h1>User Profile</h1>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title"><%= @user.first_name %> <%= @user.last_name %></h3>
+    <h1 class="panel-title">User Profile</h1>
   </div>
   <div class="panel-body">
 
     <div class="row">
       <div class="col-sm-6">
-        <div class="well well-sm">
-          <%= @user.email %>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= @user.first_name %> <%= @user.last_name %></h3>
+          </div>
+          <div class="panel-body">
+              <%= image_tag(@user.avatar.url, class: "img-responsive center-block", size: "393x393") %>
+            <div class="well well-sm">
+              <%= @user.email %>
+            </div>
+          </div>
         </div>
+
+
       </div>
       <div class="col-sm-6">
 
@@ -52,7 +62,9 @@
         </div>
       <% end %>
     </div>
-    <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
+    <% if @user == current_user %>
+      <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
+    <% end %>
 
   </div>
 </div>
