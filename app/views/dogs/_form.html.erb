@@ -12,19 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %><br>
     <%= form.text_field :name, id: :dog_name %>
   </div>
 
   <div class="field">
-    <%= form.label :age %>
+    <%= form.label :age %><br>
     <%= form.text_field :age, id: :dog_age %>
   </div>
 
   <div class="field">
-    <%= form.label :breed %>
+    <%= form.label :breed %><br>
     <%= form.text_field :breed, id: :dog_breed %>
   </div>
+
+  <div class="field av-upload">
+    <%= form.label :photo %><br>
+    <%= form.file_field :avatar %>
+  </div><br><br>
 
   <div class="actions">
     <%= form.submit %>
