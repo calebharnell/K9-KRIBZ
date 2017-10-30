@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'geocoder'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'bootswatch-rails'
 gem 'jquery-rails'
