@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 
-<h1>Listings</h1>
+  <h1>Listings</h1>
 
-<%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
+  <%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
 
-<% @listings.each do |listing| %>
+  <% @listings.each do |listing| %>
 
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -15,12 +15,11 @@
         <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
         <% end %>
 
-
       </h3>
     </div>
     <div class="row panel-body">
       <div class="col-sm-3">
-          <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
+        <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
       </div>
       <div class="col-sm-3"><br>
         Start:<br>
@@ -29,18 +28,24 @@
         <strong><%= listing.end.strftime("%A, %d %b %Y %l:%M %p" ) %></strong>
       </div>
       <div class="col-sm-3"><br>
-        Number of dogs: <br>
+        Number of dogs:
+        <br>
         <strong><%= listing.user.dogs.count %></strong><br><br>
-        Pay offered: <br>
+        Pay offered:
+        <br>
         <strong>$<%= listing.price %></strong>
       </div>
       <div class="col-sm-3"><br>
-          Listed by: <br>
-          <strong><%= listing.user.first_name %> <%= listing.user.last_name %></strong><br><br>
-          Location: <br>
-          <strong><%= listing.user.suburb %>, <%= listing.user.state %></strong><br>
+        Listed by:
+        <br>
+        <strong><%= listing.user.first_name %>
+          <%= listing.user.last_name %></strong><br><br>
+        Location:
+        <br>
+        <strong><%= listing.user.suburb %>,
+          <%= listing.user.state %></strong><br>
       </div>
     </div>
   </div>
 
-<% end %>
+  <% end %>

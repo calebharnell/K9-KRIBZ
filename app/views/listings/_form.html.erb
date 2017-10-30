@@ -1,37 +1,38 @@
 <%= form_with(model: listing, local: true) do |form| %>
-  <% if listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+<% if listing.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(listing.errors.count, "error") %>
+    prohibited this listing from being saved:</h2>
 
-      <ul>
-      <% listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% listing.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :start %><br>
-    <%= form.datetime_select :start, id: :listing_start %>
-  </div>
+<div class="field">
+  <%= form.label :start %><br>
+  <%= form.datetime_select :start, id: :listing_start %>
+</div>
 
-  <div class="field">
-    <%= form.label :end %><br>
-    <%= form.datetime_select :end, id: :listing_end %>
-  </div>
+<div class="field">
+  <%= form.label :end %><br>
+  <%= form.datetime_select :end, id: :listing_end %>
+</div>
 
-  <div class="field">
-    <%= form.label :price %><br>
-    <%= form.text_field :price, id: :listing_price %>
-  </div>
+<div class="field">
+  <%= form.label :price %><br>
+  <%= form.text_field :price, id: :listing_price %>
+</div>
 
-  <div class="field">
-    <%= form.label :details %><br>
-    <%= form.text_area :details, id: :listing_details %>
-  </div>
+<div class="field">
+  <%= form.label :details %><br>
+  <%= form.text_area :details, id: :listing_details %>
+</div>
 
-  <div class="actions">
-    <%= form.submit(class: "btn btn-primary") %>
-  </div>
+<div class="actions">
+  <%= form.submit(class: "btn btn-primary") %>
+</div>
 <% end %>

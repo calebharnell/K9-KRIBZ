@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :dogs
   resources :listings
   root 'pages#home'
-
+  get '/map', to: 'pages#map', as: 'map'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :users
