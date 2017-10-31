@@ -18,23 +18,23 @@
             <div class="panel-heading">
               <h3 class="panel-title"><%= @listing.user.first_name %></h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body"><br>
               <p>
                 <strong>Start:</strong>
                 <%= @listing.start.strftime("%A, %d %b %Y %l:%M %p") %>
-              </p>
+              </p><br>
               <p>
                 <strong>End:</strong>
                 <%= @listing.end.strftime("%A, %d %b %Y %l:%M %p") %>
-              </p>
+              </p><br>
               <p>
                 <strong>Price:</strong>
                 $<%= @listing.price %>
-              </p>
+              </p><br>
               <p>
                 <strong>Details:</strong>
                 <%= @listing.details %>
-              </p>
+              </p><br>
               <ul class="list-group">
                 <li class="list-group-item">
                   <span class="badge">14</span>
