@@ -8,4 +8,6 @@ class Listing < ApplicationRecord
 
   geocoded_by :full_street_address
   after_validation :geocode
+
+  acts_as_punchable
 end

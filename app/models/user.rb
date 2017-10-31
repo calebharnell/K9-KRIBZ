@@ -13,10 +13,12 @@ class User < ApplicationRecord
   def full_street_address
     "#{suburb}, #{state}"
   end
-  
+
   geocoded_by :full_street_address   # can also be an IP address
   after_validation :geocode
 
   ratyrate_rateable "user_rating"
   ratyrate_rater
+
+  acts_as_punchable
 end
