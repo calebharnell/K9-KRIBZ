@@ -19,7 +19,9 @@
     </div>
     <div class="row panel-body">
       <div class="col-sm-3">
+        <% if listing.user.dogs.present? %>
         <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
+        <% end %>
       </div>
       <div class="col-sm-3"><br>
         Start:<br>
@@ -42,8 +44,8 @@
           <%= listing.user.last_name %></strong><br><br>
         Location:
         <br>
-        <strong><%= listing.user.suburb %>,
-          <%= listing.user.state %></strong><br>
+        <strong><%= listing.suburb %>,
+          <%= listing.state %></strong><br>
       </div>
     </div>
   </div>

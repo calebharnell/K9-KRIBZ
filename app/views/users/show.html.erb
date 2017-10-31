@@ -19,10 +19,11 @@
                 <%= @user.last_name %></h3>
             </div>
             <div class="panel-body">
-              <%= image_tag(@user.avatar.url, class: "img-responsive center-block", size: "371x371") %><br>
+              <%= image_tag(@user.avatar.url, class: "img-responsive center-block", size: "350x350") %><br>
               <div class="well well-sm">
                 <%= @user.email %>
               </div>
+                User Rating: <%= rating_for @user, 'user_rating', disable_after_rate: true %><br>
             </div>
           </div>
 

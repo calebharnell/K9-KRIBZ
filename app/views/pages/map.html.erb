@@ -4,7 +4,7 @@
   function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
+      zoom: 12,
       center: {
         lat: -27.469703,
         lng: 153.025190
@@ -14,13 +14,20 @@
     // Create an array of alphabetical characters used to label the markers.
     var labels = 'X';
 
+    var infowindow = new google.maps.InfoWindow();
+
     // Add some markers to the map.
     // Note: The code uses the JavaScript Array.prototype.map() method to create an array of markers based on a given "locations" array. The map() method here has nothing to do with the Google Maps API.
     var markers = locations.map(function (location, i) {
-      return new google.maps.Marker({
+      marker = new google.maps.Marker({
         position: location,
         label: labels[i % labels.length]
       });
+      google.maps.event.addListener(marker, 'click', function() {
+       infowindow.setContent(location.price);
+       infowindow.open(map, this);
+     });
+      return marker
     });
 
     // Add a marker clusterer to manage the markers.
@@ -30,8 +37,10 @@
   var locations = [
     <% @listings.each do |listing| %>
     {
-      lat: <%= listing.user.latitude %>,
-      lng: <%= listing.user.longitude %>
+      lat: <%= listing.latitude %>,
+      lng: <%= listing.longitude %>,
+      name: '<%= listing.user.first_name %>',
+      price: '$ <%= listing.price %>'
     },
     <% end %>
   ]
