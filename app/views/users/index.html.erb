@@ -7,12 +7,19 @@
     <tbody>
       <% @users.each do |user| %>
       <tr>
-        <td><%= user.first_name %>
-          <%= user.last_name %></td>
-        <td><%= user.email %></td>
+        <td><%= user.first_name %> <%= user.last_name %></td>
+        <% if user_signed_in? %>
+          <td><%= user.email %></td>
+        <% else %>
+
+        <td>
+          Sign in to see email
+        </td>
+
+        <% end %>
         <td><%= user.suburb %>,
           <%= user.state %></td>
-        <td><%= link_to 'Show Profile', user %></td>
+        <td><%= link_to 'Show Profile', user, class: "btn btn-primary btn-sm" %></td>
       </tr>
       <% end %>
     </tbody>

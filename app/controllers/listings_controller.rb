@@ -4,7 +4,13 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+
+    if user_signed_in?
+      @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')
+    else
+      @listings = Listing.all
+    end
+
   end
 
   # GET /listings/1
@@ -69,6 +75,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:user_id, :start, :end, :price, :details)
+      params.require(:listing).permit(:user_id, :start, :end, :price, :details, :suburb, :state)
     end
 end

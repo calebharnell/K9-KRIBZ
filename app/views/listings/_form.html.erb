@@ -32,6 +32,16 @@
   <%= form.text_area :details, id: :listing_details %>
 </div>
 
+<div class="field">
+  <%= form.label :suburb %><br>
+  <%= form.text_field :suburb, id: :listing_suburb %>
+</div>
+
+<div class="field">
+  <%= form.label :state %><br>
+  <%= form.select :state, ["QLD", "NSW", "VIC", "SA", "WA", "TAS", "ACT", "NT"] %>
+</div><br>
+
 <div class="actions">
   <%= form.submit(class: "btn btn-primary") %>
 </div>
