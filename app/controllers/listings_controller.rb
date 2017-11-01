@@ -5,10 +5,22 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
 
-    if user_signed_in?
-      @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')
+    if params[:sort].present?
+      if params[:sort] == 'distance_ascending'
+        @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')
+      elsif params[:sort] == 'distance_descending'
+        @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance').reverse
+      elsif params[:sort] == 'newest'
+        @listings = Listing.all.reverse
+      elsif params[:sort] == 'oldest'
+        @listings = Listing.all
+      elsif params[:sort] == 'price_ascending'
+        @listings = Listing.order(price: :asc)
+      elsif params[:sort] == 'price_descending'
+        @listings = Listing.order(price: :desc)
+      end
     else
-      @listings = Listing.all
+      @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')
     end
 
   end
