@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
-  resources :dogs
-  resources :listings
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :dogs, :listings, :users
+
   root 'pages#home'
   get '/map', to: 'pages#map', as: 'map'
-  devise_for :users, controllers: { registrations: 'registrations' }
+  post '/rate' => 'rater#create', :as => 'rate'
 
-  resources :users
+  get '/listings/index/:sort', to: 'listings#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

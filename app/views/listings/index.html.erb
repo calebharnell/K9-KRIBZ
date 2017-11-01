@@ -3,6 +3,18 @@
 
   <h1>Listings</h1>
 
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span><strong>Sort by:</strong></span>
+      <%= link_to 'Distance (Near - Far)', '/listings/index/distance_ascending', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Distance (Far - Near)', '/listings/index/distance_descending', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Created at (Newest - Oldest)', '/listings/index/newest', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Created at (Oldest - Newest)', '/listings/index/oldest', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Price (Low to High)', '/listings/index/price_ascending', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Price (High to Low)', '/listings/index/price_descending', class: "btn btn-default btn-xs" %>
+    </div>
+  </div>
+
   <%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
 
   <% @listings.each do |listing| %>
