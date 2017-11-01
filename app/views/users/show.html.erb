@@ -13,7 +13,7 @@
 
       <div class="row">
         <div class="col-sm-6">
-          <div class="panel panel-info">
+          <div class="panel panel-info grid">
             <div class="panel-heading">
               <h3 class="panel-title"><%= @user.first_name %>
                 <%= @user.last_name %></h3>
@@ -36,13 +36,13 @@
         </div>
         <div class="col-sm-6">
 
-          <div class="panel panel-info">
+          <div class="panel panel-info grid">
             <div class="panel-heading">
               <h3 class="panel-title"><%= @user.suburb %>,
                 <%= @user.state %></h3>
             </div>
             <div class="panel-body">
-              <iframe width="500" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCbKIzRjmvpmZdRArNyNInwazeiod25iq8
+              <iframe width="500" height="430" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCbKIzRjmvpmZdRArNyNInwazeiod25iq8
                 &q=<%= @user.suburb %><%= @user.state %>" allowfullscreen></iframe>
             </div>
           </div>
@@ -52,12 +52,12 @@
       <div class="row">
         <% @user.dogs.each do |dog| %>
         <div class="col-sm-6">
-          <div class="panel panel-info">
+          <div class="panel panel-info grid">
             <div class="panel-heading">
               <h3 class="panel-title"><%= dog.name %></h3>
             </div>
             <div class="panel-body">
-              <%= image_tag(dog.avatar.url, class: "img-responsive center-block", size: "393x393") %>
+              <%= image_tag(dog.avatar.url, class: "img-responsive center-block", size: "350x350") %>
               Breed:
               <%= dog.breed %><br>
               Age:

@@ -24,7 +24,7 @@
         label: labels[i % labels.length]
       });
       google.maps.event.addListener(marker, 'click', function() {
-       infowindow.setContent(location.price);
+       infowindow.setContent('<p><strong>' + location.name + '</strong></p><p>' + location.price + '</p>');
        infowindow.open(map, this);
      });
       return marker
