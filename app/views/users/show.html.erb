@@ -23,7 +23,7 @@
               <div class="well well-sm">
                 <%= @user.email %>
               </div>
-              User Rating: <%= rating_for @user, 'user_rating', disable_after_rate: true %><br>
+              User Rating: <%= rating_for @user, 'user_rating', disable_after_rate: true, star_path: '/images/ratyrate' %><br>
               <ul class="list-group">
                 <li class="list-group-item">
                   <span class="badge"><%= @user.hits %></span>
