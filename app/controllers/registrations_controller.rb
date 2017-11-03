@@ -1,5 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def create
+    super
+    if @user.save
+      @to_email = @user.email
+      AuthenticationMailer.welcome_notification(@to_email).deliver_now
+    end
+  end
+
+
   private
 
   def sign_up_params
