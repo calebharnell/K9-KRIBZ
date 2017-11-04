@@ -50,10 +50,14 @@ body {
 }
 
 
-.jumbotron {
+.home-jumbotron {
   background-image: url('retriever.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.stripe-img {
+  margin-top: -20px;
 }
 
 .opacity-layer {

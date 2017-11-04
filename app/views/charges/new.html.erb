@@ -1,18 +1,27 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Upgrade to Pro</h1>
+    <p>Join now to contact other users</p>
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Amount: $5.00</span>
+        </label>
+      </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Upgrade to Pro"
-          data-amount="500"
-          data-currency="AUD"></script>
-<% end %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Upgrade to Pro"
+              data-amount="500"
+              data-currency="AUD"></script>
+    <% end %>
+  </div>
+  <div>
+    <%= image_tag 'dog-peek.png', class: "img-responsive stripe-img" %>
+  </div>
+</div>
