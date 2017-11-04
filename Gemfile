@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'stripe'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'aws-sdk', '~> 2.3'
 gem 'dotenv-rails', groups: [:development, :test]
