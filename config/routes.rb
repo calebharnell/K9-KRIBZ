@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :dogs, :listings, :users
+  resources :dogs, :listings, :users, :charges
 
   root 'pages#home'
   get '/map', to: 'pages#map', as: 'map'

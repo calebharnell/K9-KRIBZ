@@ -1,12 +1,12 @@
 <div class="container">
+  <% unless user_signed_in? %>
+    <div class="alert alert-dismissible alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <p><strong>To view listings, please sign up by clicking the Login link at the top right of the page.</strong></p>
+    </div>
+  <% end %>
 
-  <div class="alert alert-dismissible alert-warning">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <h4>Warning!</h4>
-    <p>To view listings, please sign up by clicking the Log In link in the top right of the page.</p>
-  </div>
-
-  <div class="jumbotron">
+  <div class="jumbotron home-jumbotron">
     <div class="opacity-layer">
       <%= image_tag 'dog-logo.png' %>
       <h1>Welcome to K9 KRIBZ</h1>
