@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = 1499
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -17,9 +17,12 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'aud'
     )
-    
+
     current_user.paid = true
     current_user.save
+
+    @to_email = params[:stripeEmail]
+    TransactionMailer.transaction_notification(@to_email).deliver_now
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
