@@ -5,61 +5,68 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <span>Sort by | </span>
+      <span>
+        <strong>Sort by</strong>
+      </span><br>
       <%= link_to 'Distance (Near - Far)', '/listings/index/distance_ascending', class: "btn btn-default btn-xs" %>
-      <%= link_to 'Distance (Far - Near)', '/listings/index/distance_descending', class: "btn btn-default btn-xs" %> |
-      <%= link_to 'Created (Newest - Oldest)', '/listings/index/newest', class: "btn btn-default btn-xs" %>
-      <%= link_to 'Created (Oldest - Newest)', '/listings/index/oldest', class: "btn btn-default btn-xs" %> |
+      <%= link_to 'Distance (Far - Near)', '/listings/index/distance_descending', class: "btn btn-default btn-xs" %>
+      |
+      <%= link_to 'Created (New - Old)', '/listings/index/newest', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Created (Old - New)', '/listings/index/oldest', class: "btn btn-default btn-xs" %>
+      |
       <%= link_to 'Price (Low to High)', '/listings/index/price_ascending', class: "btn btn-default btn-xs" %>
       <%= link_to 'Price (High to Low)', '/listings/index/price_descending', class: "btn btn-default btn-xs" %>
+      |
+      <%= link_to 'Start (Sooner to Later)', '/listings/index/start_ascending', class: "btn btn-default btn-xs" %>
+      <%= link_to 'Start (Later to Sooner)', '/listings/index/start_descending', class: "btn btn-default btn-xs" %>
     </div>
   </div>
 
   <%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
 
   <% @listings.each do |listing| %>
-
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= link_to 'View Listing Details', listing, class:"btn btn-info" %>
-        <% if listing.user == current_user %>
-        <%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-warning" %>
-        <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
-        <% end %>
-
-      </h3>
+    <% if listing.end.future? %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= link_to 'View Listing Details', listing, class:"btn btn-info" %>
+            <% if listing.user == current_user %>
+            <%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-warning" %>
+            <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+            <% end %>
+          </h3>
+        </div>
+      <div class="row panel-body">
+        <div class="col-sm-3">
+          <% if listing.user.dogs.present? %>
+          <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
+          <% end %>
+        </div>
+        <div class="col-sm-3"><br>
+          Start:<br>
+          <strong><%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %></strong><br><br>
+          End:<br>
+          <strong><%= listing.end.strftime("%A, %d %b %Y %l:%M %p" ) %></strong>
+        </div>
+        <div class="col-sm-3"><br>
+          Number of dogs:
+          <br>
+          <strong><%= listing.user.dogs.count %></strong><br><br>
+          Pay offered:
+          <br>
+          <strong>$<%= listing.price %></strong>
+        </div>
+        <div class="col-sm-3"><br>
+          Listed by:
+          <br>
+          <strong><%= listing.user.first_name %>
+            <%= listing.user.last_name %></strong><br><br>
+          Location:
+          <br>
+          <strong><%= listing.suburb %>,
+            <%= listing.state %></strong><br>
+        </div>
+      </div>
     </div>
-    <div class="row panel-body">
-      <div class="col-sm-3">
-        <% if listing.user.dogs.present? %>
-        <%= image_tag(listing.user.dogs.first.avatar.url, class: "img-responsive center-block thumb", size: "150x150") %>
-        <% end %>
-      </div>
-      <div class="col-sm-3"><br>
-        Start:<br>
-        <strong><%= listing.start.strftime("%A, %d %b %Y %l:%M %p")  %></strong><br><br>
-        End:<br>
-        <strong><%= listing.end.strftime("%A, %d %b %Y %l:%M %p" ) %></strong>
-      </div>
-      <div class="col-sm-3"><br>
-        Number of dogs:
-        <br>
-        <strong><%= listing.user.dogs.count %></strong><br><br>
-        Pay offered:
-        <br>
-        <strong>$<%= listing.price %></strong>
-      </div>
-      <div class="col-sm-3"><br>
-        Listed by:
-        <br>
-        <strong><%= listing.user.first_name %>
-          <%= listing.user.last_name %></strong><br><br>
-        Location:
-        <br>
-        <strong><%= listing.suburb %>,
-          <%= listing.state %></strong><br>
-      </div>
-    </div>
-  </div>
-
+    <% end %>
   <% end %>
+</div>

@@ -35,6 +35,9 @@
                 <strong>Details:</strong>
                 <%= @listing.details %>
               </p><br>
+              <% if current_user.paid? %>
+              <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: @listing.user.id), method: 'post', class: "btn btn-success" %>
+              <% end %><br><br>
               <ul class="list-group">
                 <li class="list-group-item">
                   <span class="badge"><%= @listing.hits %></span>
@@ -56,9 +59,10 @@
           </div>
         </div>
       </div>
+
+      <h2>Dogs</h2>
       <div class="row">
         <% @listing.user.dogs.each do |dog| %>
-
         <div class="col-sm-6">
           <div class="panel panel-primary grid">
             <div class="panel-heading">
@@ -66,8 +70,10 @@
             </div>
             <div class="panel-body">
               <%= image_tag(dog.avatar.url, class: "img-responsive center-block", size: "350x350") %><br>
-              Age: <%= dog.age %><br>
-              Breed: <%= dog.breed %>
+              Age:
+              <%= dog.age %><br>
+              Breed:
+              <%= dog.breed %>
             </div>
           </div>
         </div>

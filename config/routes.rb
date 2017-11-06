@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :dogs, :listings, :users, :charges
 
+  resources :conversations do
+    resources :messages
+  end
+
   root 'pages#home'
   get '/map', to: 'pages#map', as: 'map'
   post '/rate' => 'rater#create', :as => 'rate'
