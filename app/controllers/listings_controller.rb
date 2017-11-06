@@ -18,6 +18,10 @@ class ListingsController < ApplicationController
         @listings = Listing.order(price: :asc)
       elsif params[:sort] == 'price_descending'
         @listings = Listing.order(price: :desc)
+      elsif params[:sort] == 'start_ascending'
+        @listings = Listing.order(start: :asc)
+      elsif params[:sort] == 'start_descending'
+        @listings = Listing.order(start: :desc)
       end
     else
       @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')
