@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-
   def create
     super
     if @user.save
@@ -7,7 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
       AuthenticationMailer.welcome_notification(@to_email).deliver_now
     end
   end
-
 
   private
 

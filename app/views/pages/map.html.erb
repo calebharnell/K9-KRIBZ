@@ -24,7 +24,7 @@
         label: labels[i % labels.length]
       });
       google.maps.event.addListener(marker, 'click', function() {
-       infowindow.setContent('<p><strong>' + location.name + '</strong></p><p>' + location.price + '</p>');
+       infowindow.setContent('<p><strong>' + location.name + '</strong></p><p>' + location.price + '</p><br>' + location.img);
        infowindow.open(map, this);
      });
       return marker
@@ -40,7 +40,8 @@
       lat: <%= listing.latitude %>,
       lng: <%= listing.longitude %>,
       name: '<%= listing.user.first_name %>',
-      price: '$ <%= listing.price %>'
+      price: '$ <%= listing.price %>',
+      img: '<%= link_to(image_tag(listing.user.avatar.url, size: "100x100"), (listing)) %>'
     },
     <% end %>
   ]
