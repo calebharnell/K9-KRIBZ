@@ -11,9 +11,11 @@
       <%= image_tag 'dog-logo.png' %>
       <h1>Welcome to K9 KRIBZ</h1>
       <p>Connecting dog owners and dog sitters</p>
-      <p>
-        <%= link_to 'Create an Account', '/users/sign_up', class: "btn btn-primary btn-lg" %>
-      </p>
+      <% if user_signed_in? %>
+        <p><%= link_to 'Continue to Listings', listings_path, class: "btn btn-primary btn-lg" %></p>
+      <% else %>
+        <p><%= link_to 'Create an Account', '/users/sign_up', class: "btn btn-primary btn-lg" %></p>
+      <% end %>
     </div>
   </div>
 
