@@ -19,9 +19,11 @@
             </div>
             <div class="panel-body">
               <%= image_tag(@user.avatar.url, class: "img-responsive center-block", size: "320x320") %><br>
-              <div class="well well-sm">
-                <%= @user.email %>
-              </div>
+              <% if current_user.paid? %>
+                <div class="well well-sm">
+                  <%= @user.email %>
+                </div>
+              <% end %>
               <% if current_user.paid? %>
               <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-success" %><br><br>
               <% end %>
