@@ -41,12 +41,11 @@ Finding a dogsitter can be hard, and not everyone has family or friends that can
 ---
 
 ## 4. User Stories
-![User Stories](app/public/images/user-stories.png?raw=true "User Stories")
-
+![User Stories](public/images/user-stories.png?raw=true)
 ---
 
 ## 5. Entity Relationship Diagram / DB Schema
-![ERD](app/public/images/erd.png?raw=true "ERD")
+![ERD](public/images/erd.png?raw=true)
 
 ---
 
