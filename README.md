@@ -36,7 +36,7 @@ Finding a dogsitter can be hard, and not everyone has family or friends that can
 ---
 
 ## 3. Wireframes & Workflow
-![Wireframes](public/images/wireframes.pdf?raw=true)
+![Wireframes](public/images/wireframes.png?raw=true)
 
 ---
 
