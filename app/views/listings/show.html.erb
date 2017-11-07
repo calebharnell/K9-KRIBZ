@@ -35,6 +35,7 @@
                 <strong>Details:</strong>
                 <%= @listing.details %>
               </p><br>
+              <%= link_to "View User's Profile", @listing.user, class: 'btn btn-primary' %>
               <% if current_user.paid? %>
               <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @listing.user.id), method: 'post', class: "btn btn-success" %>
               <% end %><br><br>
