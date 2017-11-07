@@ -14,6 +14,10 @@
 ## 1. App Brief
 Finding a dogsitter can be hard, and not everyone has family or friends that can help out when you go away.  K9 KRIBZ is a two-sided marketplace that provides an online community to connect dog owners with dog sitters, and has various tools that help you choose the right dogsitter or the best dogsitting job.
 
+K9 KRIBZ allows a user to create a free account and browse listings.  To message other users, a user must upgrade and pay a one-off fee.
+
+Link: https://k9-kribz.herokuapp.com/
+
 ---
 
 ## 2. Project Requirements
@@ -50,8 +54,26 @@ Finding a dogsitter can be hard, and not everyone has family or friends that can
 ---
 
 ## 6. Tools, Gems and APIs
-
+1. Trello - (User stories)
+2. Balsamiq - (Wireframes/Workflow)
+3. Draw.io - (ERD/Database Schema)
+4. Postgresql - (Database)
+5. Devise - (Authentication)
+6. Devise-bootstrap-views - (Styling)
+7. Bootstrap-sass - (Styling)
+8. Jquery-rails - (UI)
+9. Bootswatch-rails - (Styling)
+10. Paperclip - (Image Uploads)
+11. geocoder - (Map Geocoding)
+12. Google Maps - (Maps)
+12. ratyrate - (User ratings)
+13. punching_bag - (Profile/Listing view counters)
+14. dotenv-rails - (Environment Variables)
+15. aws-sdk - (AWS S3 integration)
+16. mailgun-ruby - (Automated emails)
+17. stripe - (Secure payments)
+18. activeadmin - (Admin Dashboard)
 
 ---
 
-## 7. Bugs
+## 7. Bugs/Issues/Future updates
