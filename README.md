@@ -77,3 +77,4 @@ Link: https://k9-kribz.herokuapp.com/
 ---
 
 ## 7. Bugs/Issues/Future updates
+1. Implement pagination - will be necessary if there is an increase in listings.
