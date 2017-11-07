@@ -1,6 +1,6 @@
-#K9 KRIBZ
+# K9 KRIBZ
 
-##Overview
+## Overview
 1. App Brief
 2. Project Requirements
 3. Wireframes & Workflow
@@ -11,12 +11,12 @@
 
 ---
 
-##1. App Brief
+## 1. App Brief
 Finding a dogsitter can be hard, and not everyone has family or friends that can help out when you go away.  K9 KRIBZ is a two-sided marketplace that provides an online community to connect dog owners with dog sitters, and has various tools that help you choose the right dogsitter or the best dogsitting job.
 
 ---
 
-##2. Project Requirements
+## 2. Project Requirements
 1. Create your application using Ruby on Rails.
 2. Demonstrate knowledge of Rails conventions.
 3. Use postgresql database in development.
@@ -35,27 +35,27 @@ Finding a dogsitter can be hard, and not everyone has family or friends that can
 
 ---
 
-##3. Wireframes & Workflow
+## 3. Wireframes & Workflow
 
 
 ---
 
-##4. User Stories
-![User Stories](/public/images/user-stories.png?raw=true "User Stories")
+## 4. User Stories
+![User Stories](app/public/images/user-stories.png?raw=true "User Stories")
 
 ---
 
-##5. Entity Relationship Diagram / DB Schema
-![ERD](/public/images/erd.png?raw=true "ERD")
+## 5. Entity Relationship Diagram / DB Schema
+![ERD](app/public/images/erd.png?raw=true "ERD")
 
 ---
 
-##6. Tools, Gems and APIs
+## 6. Tools, Gems and APIs
 
 
 ---
 
-##7. Bugs
+## 7. Bugs
 
 
 
