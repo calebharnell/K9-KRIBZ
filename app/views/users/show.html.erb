@@ -1,7 +1,7 @@
 <div class="container">
   <%= link_to 'Back', users_path, class: "btn btn-primary" %>
   <% if @user == current_user %>
-    <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-warning" %>
+  <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-warning" %>
   <% end %>
   <br><br>
   <div class="panel panel-info">
@@ -18,14 +18,15 @@
             <div class="panel-body">
               <%= image_tag(@user.avatar.url, class: "img-responsive center-block", size: "320x320") %><br>
               <% if current_user.paid? %>
-                <div class="well well-sm">
-                  <%= @user.email %>
-                </div>
+              <div class="well well-sm">
+                <%= @user.email %>
+              </div>
               <% end %>
               <% if current_user.paid? %>
-                <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-success" %><br><br>
+              <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-success" %><br><br>
               <% end %>
-              User Rating: <%= rating_for @user, 'user_rating', disable_after_rate: true, star_path: '/images/ratyrate' %><br>
+              User Rating:
+              <%= rating_for @user, 'user_rating', disable_after_rate: true, star_path: '/images/ratyrate' %><br>
               <ul class="list-group">
                 <li class="list-group-item">
                   <span class="badge"><%= @user.hits %></span>
@@ -38,7 +39,8 @@
         <div class="col-sm-6">
           <div class="panel panel-info grid">
             <div class="panel-heading">
-              <h3 class="panel-title"><%= @user.suburb %>, <%= @user.state %></h3>
+              <h3 class="panel-title"><%= @user.suburb %>,
+                <%= @user.state %></h3>
             </div>
             <div class="panel-body">
               <iframe width="500" height="430" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_EMBED_API'] %>
@@ -47,31 +49,35 @@
           </div>
         </div>
       </div>
+      <div class="well well-sm">
+        <h2>Dogs</h2><br>
       <div class="row">
-        <% @user.dogs.each do |dog| %>
-        <div class="col-sm-6">
-          <div class="panel panel-info grid">
-            <div class="panel-heading">
-              <h3 class="panel-title"><%= dog.name %></h3>
-            </div>
-            <div class="panel-body">
-              <%= image_tag(dog.avatar.url, class: "img-responsive center-block", size: "320x320") %>
-              Breed:
-              <%= dog.breed %><br>
-              Age:
-              <%= dog.age %><br><br>
-              <% if dog.user == current_user %>
-                <%= link_to 'Edit', edit_dog_path(dog), class: 'btn btn-warning' %>
-                <%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-              <% end %>
+
+          <% @user.dogs.each do |dog| %>
+          <div class="col-sm-6">
+            <div class="panel panel-info grid">
+              <div class="panel-heading">
+                <h3 class="panel-title"><%= dog.name %></h3>
+              </div>
+              <div class="panel-body">
+                <%= image_tag(dog.avatar.url, class: "img-responsive center-block", size: "320x320") %>
+                Breed:
+                <%= dog.breed %><br>
+                Age:
+                <%= dog.age %><br><br>
+                <% if dog.user == current_user %>
+                  <%= link_to 'Edit', edit_dog_path(dog), class: 'btn btn-warning' %>
+                  <%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
+          <% end %>
+        <% if @user == current_user %>
+          <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
         <% end %>
+        </div>
       </div>
-      <% if @user == current_user %>
-        <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
-      <% end %>
     </div>
   </div>
 </div>
