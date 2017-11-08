@@ -7,7 +7,7 @@
 4. User Stories
 5. Entity Relationship Diagram / DB Schema
 6. Tools, Gems and APIs
-7. Bugs
+7. Bugs/Issues/Future updates
 
 ---
 
@@ -74,8 +74,12 @@ Link: https://k9-kribz.herokuapp.com/
 16. mailgun-ruby - (Automated emails)
 17. stripe - (Secure payments)
 18. activeadmin - (Admin Dashboard)
+19. rubocop - (Code quality)
 
 ---
 
 ## 7. Bugs/Issues/Future updates
-1. Implement pagination - will be necessary if there is an increase in listings.
+1. Implement pagination - this will be necessary once the amount of listings grows - (will-paginate gem).
+2. Unread message notifications/indicators - Indicators shouldn't be too difficult to implement as messages already have a 'read' boolean.
+3. Favicon
+4. Search Engine Optimisation
