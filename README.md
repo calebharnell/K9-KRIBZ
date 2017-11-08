@@ -3,8 +3,8 @@
 ## Overview
 1. App Brief
 2. Project Requirements
-3. Wireframes & Workflow
-4. User Stories
+3. User Stories
+4. Wireframes & Workflow
 5. Entity Relationship Diagram / DB Schema
 6. Tools, Gems and APIs
 7. Bugs/Issues/Future updates
@@ -39,13 +39,13 @@ Link: https://k9-kribz.herokuapp.com/
 
 ---
 
-## 3. Wireframes & Workflow
-![Wireframes](public/images/wireframes.png?raw=true)
+## 3. User Stories
+![User Stories](public/images/user-stories.png?raw=true)
 
 ---
 
-## 4. User Stories
-![User Stories](public/images/user-stories.png?raw=true)
+## 4. Wireframes & Workflow
+![Wireframes](public/images/wireframes.png?raw=true)
 
 ---
 
