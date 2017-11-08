@@ -17,10 +17,10 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'aud'
     )
-
+    # Set user boolean 'paid to true'
     current_user.paid = true
     current_user.save
-
+    #Transaction email for upgrade to premium
     @to_email = params[:stripeEmail]
     TransactionMailer.transaction_notification(@to_email).deliver_now
 

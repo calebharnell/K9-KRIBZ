@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-
+    # Different sorting options via url
     if params[:sort].present?
       if params[:sort] == 'distance_ascending'
         @listings = Listing.near("#{current_user.suburb} #{current_user.state}", 8_000_000 , order: 'distance')

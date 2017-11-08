@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
+    # Punching bag gem hit counter
     @user.punch(request)
   end
 end
