@@ -12,7 +12,7 @@
 ---
 
 ## 1. App Brief
-Finding a dogsitter can be hard, and not everyone has family or friends that can help out when you go away.  K9 KRIBZ is a two-sided marketplace that provides an online community to connect dog owners with dog sitters, and has various tools that help you choose the right dogsitter or the best dogsitting job.
+Finding a dogsitter can be hard, and not everyone has family or friends that live locally and can help out when you go away.  K9 KRIBZ is a two-sided marketplace that provides an online community to connect dog owners with dog sitters, and has various tools that help you choose the right dogsitter or the best dogsitting job.
 
 K9 KRIBZ allows a user to create a free account and browse listings.  To message other users, a user must upgrade and pay a one-off fee.
 
