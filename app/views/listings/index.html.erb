@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-
   <h1>Listings</h1>
-
   <div class="panel panel-default">
     <div class="panel-body">
       <span>
@@ -21,9 +19,7 @@
       <%= link_to 'Start (Later to Sooner)', '/listings/index/start_descending', class: "btn btn-default btn-xs" %>
     </div>
   </div>
-
   <%= link_to 'Create New Listing', new_listing_path, class: "btn btn-success" %><br><br>
-
   <% @listings.each do |listing| %>
     <% if listing.end.future? %>
       <div class="panel panel-primary">

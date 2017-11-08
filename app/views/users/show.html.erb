@@ -1,16 +1,14 @@
 <div class="container">
   <%= link_to 'Back', users_path, class: "btn btn-primary" %>
   <% if @user == current_user %>
-  <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-warning" %>
+    <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-warning" %>
   <% end %>
   <br><br>
-
   <div class="panel panel-info">
     <div class="panel-heading">
       <h1 class="panel-title">User Profile</h1>
     </div>
     <div class="panel-body">
-
       <div class="row">
         <div class="col-sm-6">
           <div class="panel panel-info grid">
@@ -25,7 +23,7 @@
                 </div>
               <% end %>
               <% if current_user.paid? %>
-              <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-success" %><br><br>
+                <%= link_to 'Message this user', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-success" %><br><br>
               <% end %>
               User Rating: <%= rating_for @user, 'user_rating', disable_after_rate: true, star_path: '/images/ratyrate' %><br>
               <ul class="list-group">
@@ -36,10 +34,8 @@
               </ul>
             </div>
           </div>
-
         </div>
         <div class="col-sm-6">
-
           <div class="panel panel-info grid">
             <div class="panel-heading">
               <h3 class="panel-title"><%= @user.suburb %>, <%= @user.state %></h3>
@@ -51,7 +47,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <% @user.dogs.each do |dog| %>
         <div class="col-sm-6">
@@ -66,8 +61,8 @@
               Age:
               <%= dog.age %><br><br>
               <% if dog.user == current_user %>
-              <%= link_to 'Edit', edit_dog_path(dog), class: 'btn btn-warning' %>
-              <%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <%= link_to 'Edit', edit_dog_path(dog), class: 'btn btn-warning' %>
+                <%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
               <% end %>
             </div>
           </div>
@@ -75,7 +70,7 @@
         <% end %>
       </div>
       <% if @user == current_user %>
-      <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
+        <%= link_to 'Add New Dog', new_dog_path, class: 'btn btn-success' %>
       <% end %>
     </div>
   </div>
