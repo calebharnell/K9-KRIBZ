@@ -42,7 +42,8 @@ body {
 
 .thumb {
   border-radius: 10px;
-  box-shadow:  7px 7px 5px #888888;
+  // border: 2px solid #1F5ABA;
+  box-shadow:  3px 3px 3px #888888;
 }
 
 .vert-middle {
@@ -77,7 +78,12 @@ html, body {
   padding: 0;
 }
 
+.panel {
+  box-shadow: 8px 8px 5px #888888;
+}
+
 .grid {
   height: 540px;
   overflow: scroll;
+  box-shadow: none;
 }
