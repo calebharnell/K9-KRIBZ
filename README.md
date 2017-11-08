@@ -9,6 +9,7 @@
 6. Tools, Gems and APIs
 7. Project Plan and Estimation
 8. Bugs/Issues/Future updates
+9. Installation/Configuration
 
 ---
 
@@ -92,3 +93,16 @@ One of the main features I wanted to implement was an interactive Google Map, wh
 2. Unread message notifications/indicators - Indicators shouldn't be too difficult to implement as messages already have a 'read' boolean.
 3. Favicon
 4. Search Engine Optimisation
+
+## 9. Installation/Configuration
+1. Clone repo
+2. $ bundle install
+3. Create a .env file with the following (substituting your own variables):
+  GOOGLE_MAPS_JS_API=XXXXX
+  GOOGLE_MAPS_EMBED_API=XXXXX
+  MAILGUN_API_KEY=XXXXX
+  MAILGUN_DOMAIN=XXXXX
+  STRIPE_PUBLISHABLE_KEY=XXXXX
+  STRIPE_SECRET_KEY=XXXXX
+4. $ rails s
+5. http://localhost:3000/
