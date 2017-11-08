@@ -7,7 +7,8 @@
 4. Wireframes & Workflow
 5. Entity Relationship Diagram / DB Schema
 6. Tools, Gems and APIs
-7. Bugs/Issues/Future updates
+7. Project Plan and Estimation
+8. Bugs/Issues/Future updates
 
 ---
 
@@ -75,10 +76,18 @@ Link: https://k9-kribz.herokuapp.com/
 17. stripe - (Secure payments)
 18. activeadmin - (Admin Dashboard)
 19. rubocop - (Code quality)
+20. Peer code review by Travis Anderson - (https://github.com/Travis-Anderson83)
 
 ---
 
-## 7. Bugs/Issues/Future updates
+## 7. Project Plan and Estimation
+Having only 2 weeks to complete this project it was important to reach the Minimum Viable Product as soon as possible.  For this project, MVP was simply an app that included authentication, and full CRUD capabilities for Listings which could be completed quickly using Ruby on Rails, and then adding features to cover all the project requirements.  These are listed above.
+
+One of the main features I wanted to implement was an interactive Google Map, which would also cover the API requirement for the project.  This was probably one of the most challenging aspects for me, using the Javascript Google Maps API, considering my limited knowledge of JS at this time.
+
+---
+
+## 8. Bugs/Issues/Future updates
 1. Implement pagination - this will be necessary once the amount of listings grows - (will-paginate gem).
 2. Unread message notifications/indicators - Indicators shouldn't be too difficult to implement as messages already have a 'read' boolean.
 3. Favicon
