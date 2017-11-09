@@ -42,6 +42,7 @@ Link: https://k9-kribz.herokuapp.com/
 ---
 
 ## 3. User Stories
+* Progress shot - all user stories completed now.  
 ![User Stories](public/images/user-stories.png?raw=true)
 
 ---
