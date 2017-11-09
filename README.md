@@ -98,11 +98,11 @@ One of the main features I wanted to implement was an interactive Google Map, wh
 1. Clone repo
 2. `$ bundle install`
 3. Create a .env file with the following (substituting your own variables):
-  `GOOGLE_MAPS_JS_API=XXXXX
+  GOOGLE_MAPS_JS_API=XXXXX
   GOOGLE_MAPS_EMBED_API=XXXXX
   MAILGUN_API_KEY=XXXXX
   MAILGUN_DOMAIN=XXXXX
   STRIPE_PUBLISHABLE_KEY=XXXXX
-  STRIPE_SECRET_KEY=XXXXX`
+  STRIPE_SECRET_KEY=XXXXX
 4. `$ rails s`
 5. http://localhost:3000/
