@@ -91,8 +91,7 @@ One of the main features I wanted to implement was an interactive Google Map, wh
 ## 8. Bugs/Issues/Future updates
 1. Implement pagination - this will be necessary once the amount of listings grows - (will-paginate gem).
 2. Unread message notifications/indicators - Indicators shouldn't be too difficult to implement as messages already have a 'read' boolean.
-3. Favicon
-4. Search Engine Optimisation
+3. Search Engine Optimisation
 
 ## 9. Installation/Configuration
 1. Clone repo
